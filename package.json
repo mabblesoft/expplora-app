@@ -1,6 +1,7 @@
 {
 	"name": "expplora",
 	"version": "1.0.0",
+	"private": true,
 	"main": "node_modules/expo/AppEntry.js",
 	"scripts": {
 		"start": "expo start",
@@ -8,13 +9,15 @@
 		"ios": "expo start --ios",
 		"web": "expo start --web",
 		"eject": "expo eject",
-		"test": "jest --watchAll"
-	},
-	"jest": {
-		"preset": "jest-expo"
+		"test": "jest --watchAll",
+		"lint": "eslint . && stylelint 'src/**/*.@(css|scss)'"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^13.0.0",
+		"@fortawesome/fontawesome-svg-core": "^6.1.1",
+		"@fortawesome/free-regular-svg-icons": "^6.1.1",
+		"@fortawesome/free-solid-svg-icons": "^6.1.1",
+		"@fortawesome/react-native-fontawesome": "^0.3.0",
 		"@react-native-community/masked-view": "^0.1.11",
 		"@react-navigation/bottom-tabs": "^6.0.5",
 		"@react-navigation/native": "^6.0.2",
@@ -45,13 +48,125 @@
 		"redux-thunk": "^2.4.1"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.12.9",
+		"@babel/core": "^7.18.2",
+		"@babel/preset-env": "^7.18.2",
+		"@babel/preset-react": "^7.17.12",
+		"@babel/runtime": "^7.18.3",
+		"@react-native-community/eslint-config": "^3.0.2",
+		"@teamthread/strict-css-modules-loader": "^0.0.3",
+		"@types/jest": "^28.1.1",
+		"@types/prop-types": "^15.7.5",
 		"@types/react": "~17.0.21",
-		"@types/react-native": "~0.66.13",
+		"@types/react-fontawesome": "^1.6.5",
+		"@types/react-native": "^0.66.18",
+		"@types/react-test-renderer": "^18.0.0",
+		"@typescript-eslint/parser": "^5.27.1",
+		"autoprefixer": "^10.4.7",
+		"babel-jest": "^28.1.1",
+		"babel-loader": "^8.2.5",
+		"babel-plugin-react-native-classname-to-style": "^1.2.2",
+		"babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
+		"babel-preset-react": "^6.24.1",
+		"css-loader": "^6.7.1",
+		"dts-css-modules-loader": "^2.0.0",
+		"eslint": "^8.17.0",
+		"eslint-plugin-css-modules": "^2.11.0",
+		"file-loader": "^6.2.0",
+		"identity-obj-proxy": "^3.0.0",
 		"jest": "^26.6.3",
+		"jest-cli": "^28.1.1",
 		"jest-expo": "~45.0.0",
-		"react-test-renderer": "17.0.2",
-		"typescript": "~4.3.5"
+		"metro-react-native-babel-preset": "^0.71.0",
+		"node-sass": "^7.0.1",
+		"patch-package": "^6.4.7",
+		"postcss": "^8.4.14",
+		"postcss-css-variables": "^0.18.0",
+		"postcss-loader": "^7.0.0",
+		"prettier": "^2.6.2",
+		"react-hot-loader": "^4.13.0",
+		"react-native-css-transformer": "^1.2.4",
+		"react-native-paper": "^4.12.1",
+		"react-native-sass-transformer": "^2.0.0",
+		"react-native-svg": "^12.3.0",
+		"react-native-typed-postcss-transformer": "^0.20.9",
+		"react-test-renderer": "^17.0.2",
+		"sass-loader": "^13.0.0",
+		"style-loader": "^3.3.1",
+		"stylelint": "^13.13.1",
+		"stylelint-config-react-native-css-modules": "^3.1.0",
+		"stylelint-react-native": "^2.4.0",
+		"ts-loader": "^9.3.0",
+		"tslib": "^2.4.0",
+		"typescript": "~4.3.5",
+		"webpack": "^5.73.0",
+		"webpack-cli": "^4.9.2",
+		"webpack-dev-server": "^4.9.2"
 	},
-	"private": true
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"IE 11",
+		"Android >= 4.4",
+		"iOS >= 8"
+	],
+	"jest": {
+		"preset": "jest-expo",
+		"verbose": true,
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx"
+		],
+		"moduleNameMapper": {
+			"^.+\\.(css|scss)$": "identity-obj-proxy"
+		},
+		"testMatch": [
+			"**/__tests__/**/*.(js|ts)?(x)",
+			"**/?(*.)+(spec|test).(js|ts)?(x)"
+		],
+		"transformIgnorePatterns": [
+			"\\.snap$",
+			"<rootDir>/node_modules/?!(react-native)"
+		],
+		"transform": {
+			"^.+\\.(js|jsx|ts|tsx)?$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+		}
+	},
+	"postcss": {
+		"plugins": {
+			"postcss-css-variables": {}
+		}
+	},
+	"eslintConfig": {
+		"parser": "@typescript-eslint/parser",
+		"parserOptions": {
+			"sourceType": "module",
+			"ecmaVersion": 2018,
+			"ecmaFeatures": {
+				"jsx": true
+			}
+		},
+		"env": {
+			"jest": true
+		},
+		"plugins": [
+			"css-modules"
+		],
+		"extends": [
+			"@react-native-community",
+			"plugin:css-modules/recommended"
+		]
+	},
+	"stylelint": {
+		"extends": "stylelint-config-react-native-css-modules",
+		"rules": {
+			"selector-class-pattern": "^[a-z][a-zA-Z0-9]*$",
+			"declaration-block-no-duplicate-properties": true,
+			"no-duplicate-selectors": true,
+			"no-extra-semicolons": true,
+			"no-eol-whitespace": true,
+			"no-missing-end-of-source-newline": true
+		}
+	}
 }
