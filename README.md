@@ -1,2 +1,0 @@
-# expplora-app
-# service
