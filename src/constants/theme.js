@@ -3,7 +3,7 @@ import { Platform, StatusBar } from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 export const COLORS = {
-	black: '#262B2E',
+	black: '#1B1B1B',
 	white: '#fff',
 	gray1: '#D7D7D7',
 	gray2: '#8A8D9F',
@@ -40,21 +40,21 @@ export const SIZES = {
 };
 
 export const FONTS = {
-	Roboto_400Regular: {
-		fontFamily: 'Roboto_400Regular',
+	Poppins_Regular: {
+		fontFamily: 'Poppins_Regular',
 	},
-	Roboto_500Medium: {
-		fontFamily: 'Roboto_500Medium',
+	Poppins_Medium: {
+		fontFamily: 'Poppins_Medium',
 	},
-	Roboto_700Bold: {
-		fontFamily: 'Roboto_700Bold',
+	Poppins_Bold: {
+		fontFamily: 'Poppins_Bold',
 	},
 	H1: {
-		fontFamily: 'Roboto_700Bold',
+		fontFamily: 'Poppins_Bold',
 		fontSize: 30,
 	},
 	H2: {
-		fontFamily: 'Roboto_700Bold',
+		fontFamily: 'Poppins_Bold',
 		fontSize: 22,
 		color: COLORS.green,
 		textTransform: 'capitalize',
@@ -62,7 +62,7 @@ export const FONTS = {
 		lineHeight: 22 * 1.2,
 	},
 	H4: {
-		fontFamily: 'Roboto_400Regular',
+		fontFamily: 'Poppins_Regular',
 		fontSize: 16,
 		color: COLORS.gray2,
 		textAlign: 'center',
