@@ -69,7 +69,7 @@ export default function Home() {
 						width: 50,
 						height: 50,
 						borderRadius: 25,
-						backgroundColor: COLORS.lightGreen,
+						backgroundColor: COLORS.lightGray,
 						justifyContent: 'center',
 						alignItems: 'center',
 					}}>

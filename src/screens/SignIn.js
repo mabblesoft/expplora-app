@@ -37,7 +37,7 @@ export default function SignIn() {
 						textAlign: 'center',
 						lineHeight: 22 * 1.2,
 					}}>
-					Welcome Back Jhon!
+					Welcome!
 				</Text>
 				<Text
 					style={{
@@ -61,6 +61,12 @@ export default function SignIn() {
 					contaynerStyle={{ marginBottom: 37 }}
 					secureTextEntry={true}
 				/>
+
+				<Button
+					title='SIGN IN'
+					containerStyle={{ backgroundColor: COLORS.green }}
+					onPress={() => navigation.navigate('MainLayout')}
+				/>
 				<View
 					style={{
 						width: '100%',
@@ -69,11 +75,12 @@ export default function SignIn() {
 						justifyContent: 'space-between',
 						paddingLeft: 20,
 						marginBottom: 18,
+						marginTop: 18,
 					}}>
 					<TouchableOpacity
 						style={{ flexDirection: 'row', alignItems: 'center' }}
 						onPress={() => setRemember(!remember)}>
-						<View
+						{/* <View
 							style={{
 								width: 16,
 								height: 16,
@@ -84,15 +91,15 @@ export default function SignIn() {
 								justifyContent: 'center',
 								alignItems: 'center',
 							}}>
-							{remember && <Check />}
-						</View>
+							{remember}
+						</View> */}
 						<Text
 							style={{
 								...FONTS.Poppins_Regular,
 								fontSize: 16,
 								color: COLORS.black,
 							}}>
-							Remember me
+							Forgot Password ?
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity
@@ -103,16 +110,12 @@ export default function SignIn() {
 								fontSize: 16,
 								color: COLORS.carrot,
 								paddingRight: 20,
+								marginleft: 20,
 							}}>
-							Forgot password ?
+							Rest Password
 						</Text>
 					</TouchableOpacity>
 				</View>
-				<Button
-					title='Sign in'
-					containerStyle={{ backgroundColor: COLORS.green }}
-					onPress={() => navigation.navigate('MainLayout')}
-				/>
 				<View
 					style={{
 						flexDirection: 'row',
@@ -126,9 +129,9 @@ export default function SignIn() {
 							fontSize: 16,
 							color: COLORS.black,
 						}}>
-						Already have not an account?
+						Dont have any account?
 					</Text>
-					<TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+					{/* <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
 						<Text
 							style={{
 								...FONTS.Poppins_Medium,
@@ -138,8 +141,18 @@ export default function SignIn() {
 							{' '}
 							Sing up!
 						</Text>
-					</TouchableOpacity>
+					</TouchableOpacity> */}
 				</View>
+				<Button
+					title='CREATE AN ACCOUNT'
+					containerStyle={{
+						...FONTS.Poppins_Regular,
+						backgroundColor: COLORS.lightOrange,
+						color: COLORS.black,
+						marginBottom: 18,
+					}}
+					onPress={() => navigation.navigate('SignUp')}
+				/>
 			</KeyboardAwareScrollView>
 		</SafeAreaView>
 	);

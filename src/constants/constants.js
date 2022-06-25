@@ -1,7 +1,7 @@
 const onboarding = [
     {
         id: "1",
-        title: "Welcome to Bitcoin",
+        title: "Welcome to Expplora",
         description:
             "Reference site about Lorem Ipsum, giving information origins as well as a random",
         image: require("../assets/images/onboarding/01.png"),

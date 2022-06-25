@@ -34,20 +34,23 @@ export default function SignUp() {
 				</TouchableOpacity>
 				<InputField
 					placeholder='Full Name'
-					contaynerStyle={{ marginBottom: 13 }}
+					contaynerStyle={{ ...FONTS.Poppins_Regular, marginBottom: 13 }}
 				/>
 				<InputField
 					placeholder='Phone Number'
 					contaynerStyle={{ marginBottom: 13 }}
 				/>
-				<InputField placeholder='Email' contaynerStyle={{ marginBottom: 13 }} />
+				<InputField
+					placeholder='Email'
+					contaynerStyle={{ ...FONTS.Poppins_Regular, marginBottom: 13 }}
+				/>
 				<InputField
 					placeholder='Password'
-					contaynerStyle={{ marginBottom: 13 }}
+					contaynerStyle={{ ...FONTS.Poppins_Regular, marginBottom: 13 }}
 				/>
 				<InputField
 					placeholder='Confirm Password'
-					contaynerStyle={{ marginBottom: 37 }}
+					contaynerStyle={{ ...FONTS.Poppins_Regular, marginBottom: 37 }}
 				/>
 				<View
 					style={{
@@ -60,7 +63,7 @@ export default function SignUp() {
 							alignItems: 'center',
 						}}
 						onPress={() => setRemember(!remember)}>
-						<View
+						{/* <View
 							style={{
 								width: 16,
 								height: 16,
@@ -72,24 +75,24 @@ export default function SignUp() {
 								alignItems: 'center',
 							}}>
 							{remember && <Check />}
-						</View>
+						</View> */}
 						<View style={{ flex: 1 }}>
 							<Text
 								style={{
 									...FONTS.Poppins_Regular,
-									fontSize: 16,
+									fontSize: 14,
 									marginLeft: 3,
 									color: COLORS.gray2,
 									lineHeight: 16 * 1.3,
 								}}>
-								You agree to our Terms of Service
+								By tapping Sign up you accept all our terms and condition
 							</Text>
 						</View>
 					</TouchableOpacity>
 				</View>
 
 				<Button
-					title='Sign Up'
+					title='SIGN UP'
 					containerStyle={{
 						backgroundColor: COLORS.green,
 						marginBottom: 28,
@@ -117,6 +120,7 @@ export default function SignUp() {
 								...FONTS.Poppins_Bold,
 								fontSize: 16,
 								color: COLORS.green,
+								textDecorationLine: 'underline',
 							}}>
 							{' '}
 							Sign in!

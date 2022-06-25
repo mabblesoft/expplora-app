@@ -113,16 +113,15 @@ export default function OnBoarding() {
 									}}>
 									{item.description}
 								</Text>
+								{renderDots()}
 								<Button
-									title='Get Started'
+									title='GET STARTED'
 									containerStyle={{
-										marginBottom: SIZES.height / 26,
+										marginTop: SIZES.height / 26,
 										backgroundColor: COLORS.green,
 									}}
 									onPress={() => navigation.navigate('SignIn')}
 								/>
-
-								{renderDots()}
 
 								<View
 									style={{
